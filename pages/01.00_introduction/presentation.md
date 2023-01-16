@@ -9,11 +9,11 @@ metadata:
     'og:author': 'Kuma Consulting'
     'twitter:card': summary_large_image
     'twitter:title': 'Introduction | Grav'
-    'article:published_time': '2023-01-16T21:29:41+01:00'
-    'article:modified_time': '2023-01-16T21:29:41+01:00'
+    'article:published_time': '2023-01-16T21:32:17+01:00'
+    'article:modified_time': '2023-01-16T21:32:17+01:00'
     'article:author': 'Kuma Consulting'
 aura:
     pagetype: website
 ---
 
-# Introduction
+# Kuma Consulting
