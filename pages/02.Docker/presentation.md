@@ -8,69 +8,61 @@ metadata:
     'og:author': 'Kuma Consulting'
     'twitter:card': summary_large_image
     'twitter:title': 'Docker | Grav'
-    'article:published_time': '2023-01-16T21:37:44+01:00'
-    'article:modified_time': '2023-01-16T21:37:44+01:00'
+    'article:published_time': '2023-01-16T21:45:55+01:00'
+    'article:modified_time': '2023-01-16T21:45:55+01:00'
     'article:author': 'Kuma Consulting'
 aura:
     metadata: {  }
 ---
 
 
-
 ##############################################################################
-# DOCKER BUILD
+### DOCKER BUILD
 ##############################################################################
 
-| Name                                         | Genre                                                   | 
-| :----------------------------------  | :-------------------------------------------------------------------: |
-| docker build -t friendlyname .             |  Create image using this directory's Dockerfile                  | 
+| Commands                                         | Comments                                                                                       | 
+| ----------------------------------  | ------------------------------------------------------------------- |
+| docker build -t friendlyname .                                             | Create image using this directory's Dockerfile                  | 
+| docker build -t friendlyname -f /tmp/MYDOCKERFILE      | Create image using full path to another Dockerfile |
+| docker tag <image> username/repository:tag                   | Tag <image> for upload to registry |   
+| docker push username/repository:tag                                | Upload tagged image to registry - Don't forget to Login 1st ^^ |
+| docker login                                                                          | Log in this CLI session using your Docker credentials |
 
-
-
-             
-| **rrrrrr** | **rrrrrr** |
-|------------|------------|
-| zrgerg | zreerzger |
-
-
-
-docker build -t friendlyname -f /tmp/MYDOCKERFILE   # Create image using full path to another Dockerfile
-
-docker tag <image> username/repository:tag          # Tag <image> for upload to registry
     
-docker push username/repository:tag                 # Upload tagged image to registry - Don't forget to Login 1st ^^
-docker login                                        # Log in this CLI session using your Docker credentials
-
+    
 
 ##############################################################################
-# DOCKER CONTAINERS
+### DOCKER CONTAINERS
 ##############################################################################
 
 
-docker container run -p 4000:80 friendlyname    # Run "friendlyname" mapping port 4000 to 80
-docker container run -d -p 4000:80 friendlyname # Same thing, but in detached mode
-docker exec -it [container-id] bash             # Enter a running container
-docker container ls                             # See a list of all running containers
-docker stop <hash>                              # Gracefully stop the specified container
-docker ps -a                                    # See a list of all containers, even the ones not running (old cmd version)
-docker container start <Co­­nt­a­i­ne­­r>              # Démarre le conteneur
-docker container stop <Co­­nt­a­ine­r>               # Arrête un conteneur en cours d'exéc­ution
-docker container restart <Co­­nt­a­i­ne­­r>            # Redémarre le conteneur
-docker pause <Co­­nt­a­i­ne­­r>                        # Suspend tous les processus du conteneur
-docker unpause <Co­nta­ine­r>                      # Dé-suspens de tous les processus du conteneur
-docker container kill <hash>                    # Force shutdown of the specified container
-docker container rm <hash>                      # Remove the specified container from this machine
-docker container rm <hash>                      # Remove the specified container from this machine
-docker container rm -f <hash>                   # Remove force specified container from this machine
-docker container rm $(docker ps -a -q)          # Remove all containers from this machine
-docker container logs <container-id> -f         # Live tail a container's logs
-docker container run username/repository:tag    # Run image from a registry
-docker container port <container-id>            # List All port used by the container 
-docker system prune                             # Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes. (Docker 17.06.1-ce and superior)
-docker system prune -a                          # Remove all unused containers, networks, images not just dangling ones (Docker 17.06.1-ce and superior)
-docker volume prune                             # Remove all unused local volumes
-docker network prune                            # Remove all unused networks
-docker inspect <container-id>                   # Show informations about the container-id
+| Commands                                        | Comments                                                                                                                                   |
+|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| docker container run -p 4000:80 friendlyname    | Run "friendlyname" mapping port 4000 to 80                                                                                                 |
+| docker container run -d -p 4000:80 friendlyname | Same thing, but in detached mode                                                                                                           |
+| docker exec -it [container-id] bash             | Enter a running container                                                                                                                  |
+| docker container ls                             | See a list of all running containers                                                                                                       |
+| docker stop <hash>                              | Gracefully stop the specified container                                                                                                    |
+| docker ps -a                                    | See a list of all containers, even the ones not running (old cmd version)                                                                  |
+| docker container start <Container>              | Démarre le conteneur                                                                                                                       |
+| docker container stop <Container>               | Arrête un conteneur en cours d'exéc­ution                                                                                                  |
+| docker container restart <Container>            | Redémarre le conteneur                                                                                                                     |
+| docker pause <Container>                        | Suspend tous les processus du conteneur                                                                                                    |
+| docker unpause <Container>                      | Retire la pause de tous les processus du conteneur                                                                                         |
+| docker container kill <hash>                    | Force shutdown of the specified container                                                                                                  |
+| docker container rm <hash>                      | Remove the specified container from this machine                                                                                           |
+| docker container rm -f <hash>                   | Remove force specified container from this machine                                                                                         |
+| docker container rm $(docker ps -a -q)          | Remove all containers from this machine                                                                                                    |
+| docker container logs <container-id> -f         | Live tail a container's logs                                                                                                               |
+| docker container run username/repository:tag    | Run image from a registry                                                                                                                  |
+| docker container port <container-id>            | List All port used by the container                                                                                                        |
+| docker system prune                             | Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes. (Docker 17.06.1-ce and superior) |
+| docker system prune -a                          | Remove all unused containers, networks, images not just dangling ones (Docker 17.06.1-ce and superior)                                     |
+| docker volume prune                             | Remove all unused local volumes                                                                                                            |
+| docker network prune                            | Remove all unused networks                                                                                                                 |
+| docker inspect <container-id>                   | Show informations about the container-id                                                                                                   |    
+    
+ 
 
 
 ##############################################################################
@@ -78,12 +70,15 @@ docker inspect <container-id>                   # Show informations about the co
 ##############################################################################
 
 
-docker images -a                                # Show all images on this machine
-docker rmi <imagename>                          # Remove the specified image from this machine
-docker rmi $(docker images -q)                  # Remove all images from this machine
+| Commands                       | Comments                                     |
+|--------------------------------|----------------------------------------------|
+| docker images -a               | Show all images on this machine              |
+| docker rmi <imagename>         | Remove the specified image from this machine |
+| docker rmi $(docker images -q) | Remove all images from this machine          |
+ 
 
 ##############################################################################
-# DOCKER VOLUMES
+### DOCKER VOLUMES
 ##############################################################################
 
 
