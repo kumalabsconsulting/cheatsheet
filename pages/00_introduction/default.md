@@ -7,8 +7,8 @@ metadata:
     'og:author': 'Kuma Consulting'
     'twitter:card': summary_large_image
     'twitter:title': '00_introduction | Grav'
-    'article:published_time': '2023-01-16T21:04:28+01:00'
-    'article:modified_time': '2023-01-16T21:04:28+01:00'
+    'article:published_time': '2023-01-16T21:06:10+01:00'
+    'article:modified_time': '2023-01-16T21:06:10+01:00'
     'article:author': 'Kuma Consulting'
 ---
 
