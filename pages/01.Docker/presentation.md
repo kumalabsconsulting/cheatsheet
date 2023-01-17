@@ -1,6 +1,7 @@
 ---
 title: Docker
 body_classes: 'title-center title-h1h2'
+pre: "01 - <i class='fab fa-docker'></i> "
 metadata:
     'og:url': 'https://cheatsheet.kumalabs.consulting/docker'
     'og:type': website
